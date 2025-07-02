@@ -102,7 +102,11 @@ def get_price(url):
 from serpapi import GoogleSearch
 import re
 
-SERPAPI_KEY = "00676ce72c7e70204fffb58c88deedffb370b9dd60fe066213611564515d375d"
+
+# IMPORTANT: Set your SerpApi key in .streamlit/secrets.toml as:
+# [serpapi]
+# api_key = "YOUR_SERPAPI_KEY"
+SERPAPI_KEY = st.secrets["serpapi"]["api_key"]
 
 def get_serp_links(gtin, max_results=50):
     links = []
